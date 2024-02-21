@@ -1,0 +1,120 @@
+<!-- Manas 
+BCA 1st year 
+Morning shift -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        body {
+    margin: 20px;
+  }
+  .btn{
+   float: left; 
+   margin: 5px;
+  }
+  #scr{
+    text-align:center; 
+    margin: 5px;
+    /* width: 150px; */
+    height: 80px;
+  border: solid blue 2px;
+  border-radius: 5px;
+    background-color: yellow;
+  }
+  #pura{
+    background-color: bisque;
+    float: left;
+    padding: 10px;
+     margin: 5px;
+  }
+  .res{
+    font-weight: bolder;
+  }
+  #recent{
+    border: solid black 2px;
+float:left;
+width: 200px ;
+height: 150px;
+overflow-y: scroll;
+  }
+    </style>
+</head>
+<body>
+    <h1>
+        Calculater
+       </h1>
+       <div id="pura">
+       <div id="scr" >
+         Screen
+       </div>
+       
+       <button type="button" class="btn btn-secondary" onclick="ass(1)">1</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(2)">2</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(3)">3</button>
+       <button type="button" class="btn btn-secondary" onclick="ass('+')">+</button>
+     <br><br>
+       <button type="button" class="btn btn-secondary" onclick="ass(4)">4</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(5)">5</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(6)">6</button>
+       <button type="button" class="btn btn-secondary" onclick="ass('-')">-</button>
+       <br><br>
+       <button type="button" class="btn btn-secondary" onclick="ass(7)">7</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(8)">8</button>
+       <button type="button" class="btn btn-secondary" onclick="ass(9)">9</button>
+       <button type="button" class="btn btn-secondary" onclick="ass('*')">X</button>
+       <br><br>
+       <button type="button" class="btn btn-secondary" onclick="show()"> = </button>
+       <button type="button" class="btn btn-secondary" onclick="ass(0)">0</button>
+       <button type="button" class="btn btn-secondary" onclick="ass('.')">.</button>
+       <button type="button" class="btn btn-secondary" onclick="ass('/')">/</button><br><br>
+       <button type="button" class="btn btn-secondary" onclick="clr()">Clear</button>
+       <button type="button" class="btn btn-secondary" onclick="del()">Backspace</button>
+     </div>
+       
+       <div id="recent">
+        <h4>History</h4>
+<p id="his">
+
+</p>
+       </div>
+       
+       <script> 
+      console.log("from script file");
+var ans="";
+var a;
+var cmt="";
+var histry="";
+function ass(a){
+    ans=""+ ans+a;
+    console.log(ans);
+    document.getElementById("scr").innerHTML= ans;
+    // return a;
+}
+function clr(){
+    ans="";
+    document.getElementById("scr").innerHTML= ans;
+}
+function show(){
+console.log(ans.length);
+histry=histry+ans+"<br>";
+ans.length<4?cmt="TRUST YOURSELF":cmt="I'm not sure though" ;
+ans=eval(ans);
+
+document.getElementById("scr").innerHTML= '<p class="res" >'+ans+'</p>'+'<p class="res">'+cmt+ '</p>';
+document.getElementById("his").innerHTML= histry;  
+
+}
+
+
+function del(){
+    ans = ans.slice(0,-1);
+    document.getElementById("scr").innerHTML= ans;
+
+}</script>
+</body>
+</html>
