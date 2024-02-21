@@ -100,10 +100,11 @@ function clr(){
     document.getElementById("scr").innerHTML= ans;
 }
 function show(){
+    ans=eval(ans);
 // console.log(ans.length);
 histry=histry+ans+"<br>";
 ans.length<4?cmt="TRUST YOURSELF":cmt="I'm not sure though" ;
-ans=eval(ans);
+
 
 document.getElementById("scr").innerHTML= '<p class="res" >'+ans+'</p>'+'<p class="res">'+cmt+ '</p>';
 document.getElementById("his").innerHTML= histry;  
